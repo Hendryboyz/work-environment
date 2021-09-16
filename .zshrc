@@ -1,4 +1,5 @@
 export PATH="$PATH:/Applications/CMake.app/Contents/bin"
+
 function git_branch_name()
 {
   branch=$(git symbolic-ref HEAD 2> /dev/null | awk 'BEGIN{FS="/"} {print $NF}')
@@ -9,9 +10,9 @@ function git_branch_name()
     echo '('$branch')'
   fi
 }
-setopt prompt_subst
+
 # PS1="%n@%m %1~ %#" # default
-PS1="%B%U%F{cyan}%n%f%u@%F{214}%m%f in %1~ %# "
+PS1="%B%U%F{cyan}%n%f%u@%F{214}%m%f in %1~%b %# "
 
 alias ll="ls -al"
 
@@ -21,6 +22,7 @@ alias gl="git log --oneline"
 alias gc="git commit -m"
 alias gp="git pull --rebase"
 alias gb="git branch"
+alias gs="git status"
 
 # AILabs
 alias port-forward-asr="kubectl -n group-asr port-forward svc/transkribera-dev-be-asr-stream-proxy 7001"
