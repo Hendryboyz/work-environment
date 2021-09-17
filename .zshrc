@@ -17,12 +17,14 @@ PS1="%B%U%F{cyan}%n%f%u@%F{214}%m%f in %1~%b %# "
 alias ll="ls -al"
 
 # git
-alias gbc="git brach -c"
+alias gcb="git checkout -b"
+alias gs="git status"
 alias gl="git log --oneline"
 alias gc="git commit -m"
 alias gp="git pull --rebase"
 alias gb="git branch"
-alias gs="git status"
 
 # AILabs
 alias port-forward-asr="kubectl -n group-asr port-forward svc/transkribera-dev-be-asr-stream-proxy 7001"
+alias port-forward-rtmp="kubectl -n group-asr port-forward svc/asr-rtmp 1935"
+alias kubeasr="kubectl -n group-asr"
