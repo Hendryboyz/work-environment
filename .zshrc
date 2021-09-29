@@ -25,6 +25,12 @@ alias gp="git pull --rebase"
 alias gb="git branch"
 
 # AILabs
-alias port-forward-asr="kubectl -n group-asr port-forward svc/transkribera-dev-be-asr-stream-proxy 7001"
-alias port-forward-rtmp="kubectl -n group-asr port-forward svc/asr-rtmp 1935"
-alias kubeasr="kubectl -n group-asr"
+alias port-forward-asr="kubectl --context=henry.chou@lab3 -n group-asr port-forward svc/transkribera-dev-be-asr-stream-proxy 7001"
+alias port-forward-rtmp="kubectl --context=henry.chou@lab3 -n group-asr port-forward svc/asr-rtmp 1935"
+alias kubeasr="kubectl --context=henry.chou@lab3 -n group-asr"
+alias kubestage="kubectl --context=arn:aws:eks:ap-northeast-1:736881965990:cluster/eks-M8P5QxEY"
+
+# autocomplete terraform
+autoload -Uz compinit && compinit
+command -v terraform && complete -o nospace -C /usr/local/bin/terraform terraform
+command -v kubectl && source <(kubectl completion zsh)
