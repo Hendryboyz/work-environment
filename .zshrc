@@ -31,6 +31,8 @@ alias kubeasr="kubectl --context=henry.chou@lab3 -n group-asr"
 alias kubestage="kubectl --context=arn:aws:eks:ap-northeast-1:736881965990:cluster/eks-M8P5QxEY"
 
 # autocomplete terraform
+autoload -U +X bashcompinit && bashcompinit
 autoload -Uz compinit && compinit
 command -v terraform && complete -o nospace -C /usr/local/bin/terraform terraform
 command -v kubectl && source <(kubectl completion zsh)
+
