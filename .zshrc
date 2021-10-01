@@ -35,4 +35,5 @@ autoload -U +X bashcompinit && bashcompinit
 autoload -Uz compinit && compinit
 command -v terraform && complete -o nospace -C /usr/local/bin/terraform terraform
 command -v kubectl && source <(kubectl completion zsh)
+command -v aws && complete -C "$(which aws_completer)" aws
 
